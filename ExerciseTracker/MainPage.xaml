@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExerciseTracker.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#283A77" Padding="24" CornerRadius="0">
+            <Label Text="Exercise Tracker" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        
+        <Label Text="Exercise: " FontSize="Title" Padding="30,10,30,10"/>
+        
+        <Picker x:Name="picker"
+        Title="Select an exercise"
+        TitleColor="#283A77">
+            <Picker.ItemsSource >
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Baboon</x:String>
+                    <x:String>Capuchin Monkey</x:String>
+                    <x:String>Blue Monkey</x:String>
+                    <x:String>Squirrel Monkey</x:String>
+                    <x:String>Golden Lion Tamarin</x:String>
+                    <x:String>Howler Monkey</x:String>
+                    <x:String>Japanese Macaque</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Average Weight: " FontSize="Subtitle" Padding="30,10,30,10"/>
+        <Label Text="Personal Best: " FontSize="Subtitle" Padding="30,10,30,10"/>
+
+        <Button Text="Update Exercise" Clicked="UpdateEx_OnClicked"/>
+        <Button Text="New Exercise" Clicked="NewEx_OnClicked"/>
+        <Button Text="Delete Exercise" Clicked="DelEx_OnClicked"/>
+    </StackLayout>
+
+</ContentPage>

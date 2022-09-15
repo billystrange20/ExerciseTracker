@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExerciseTracker.UpdateExPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Padding="24" CornerRadius="0">
+                <Label Text="Update Exercise" HorizontalTextAlignment="Center" FontSize="36"/>
+            </Frame>
+
+            <Label Text="Select Exercise to Update: " FontSize="18"/>
+
+
+            <Picker x:Name="picker"
+            Title="Select an exercise"
+            TitleColor="#283A77">
+                <Picker.ItemsSource >
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Baboon</x:String>
+                        <x:String>Capuchin Monkey</x:String>
+                        <x:String>Blue Monkey</x:String>
+                        <x:String>Squirrel Monkey</x:String>
+                        <x:String>Golden Lion Tamarin</x:String>
+                        <x:String>Howler Monkey</x:String>
+                        <x:String>Japanese Macaque</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="New Average: " FontSize="18"/>
+            <Entry />
+
+            <Label Text="New Personal Best: " FontSize="18"/>
+            <Entry />
+
+            <Button Text="Update" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
