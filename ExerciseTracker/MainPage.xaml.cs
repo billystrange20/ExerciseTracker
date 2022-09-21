@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,12 @@ namespace ExerciseTracker
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();            
+            collectionView.ItemsSource = await App.Database.GetExerciseAsync();
         }
 
         private async void UpdateEx_OnClicked(object sender, EventArgs e)

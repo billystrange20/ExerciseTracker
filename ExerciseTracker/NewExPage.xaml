@@ -9,15 +9,15 @@
             </Frame>
 
             <Label Text="New Exercise Name: " FontSize="18"/>
-            <Entry />
+            <Entry x:Name="exName"/>
 
-            <Label Text="Average Weight: " FontSize="18"/>
-            <Entry />
+            <Label Text="Average Weight: " FontSize="18" />
+            <Entry x:Name="avgWeight" Keyboard="Numeric"/>
 
             <Label Text="Personal Best: " FontSize="18"/>
-            <Entry />
+            <Entry x:Name="pbWeight" Keyboard="Numeric"/>
 
-            <Button Text="Add New Exercise" />
+            <Button Text="Add New Exercise" Clicked="AddEx_OnClicked"/>
 
         </StackLayout>
     </ContentPage.Content>

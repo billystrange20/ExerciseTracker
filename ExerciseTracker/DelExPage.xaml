@@ -8,25 +8,19 @@
                 <Label Text="Delete Exercise" HorizontalTextAlignment="Center" FontSize="36"/>
             </Frame>
 
-            <Label Text="Select Exercise to Delete: " FontSize="18"/>
+            <Label Text="Select Exercise to Delete: " FontSize="Subtitle"/>
 
-            <Picker x:Name="picker"
-            Title="Select an exercise"
-            TitleColor="#283A77">
-                <Picker.ItemsSource >
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Baboon</x:String>
-                        <x:String>Capuchin Monkey</x:String>
-                        <x:String>Blue Monkey</x:String>
-                        <x:String>Squirrel Monkey</x:String>
-                        <x:String>Golden Lion Tamarin</x:String>
-                        <x:String>Howler Monkey</x:String>
-                        <x:String>Japanese Macaque</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
+            <CollectionView x:Name="collectionView" SelectionMode="Single" SelectionChanged="collectionView_SelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding ExName}" FontSize="Small" Padding="10"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-            <Button Text="Delete" />
+            <Button Text="Delete" Clicked="Delete_OnClicked"/>
             
         </StackLayout>
     </ContentPage.Content>

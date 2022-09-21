@@ -16,5 +16,30 @@ namespace ExerciseTracker
         {
             InitializeComponent();
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            collectionView.ItemsSource = await App.Database.GetExerciseAsync();
+        }
+
+        Exercise lastSelection;
+        private void collectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            lastSelection = e.CurrentSelection[0] as Exercise;
+        }
+
+        async void Update_OnClicked(object sender, EventArgs e)
+        {
+            if (lastSelection != null)
+            {
+                lastSelection.AvgWeight = avgWeight.Text;
+                lastSelection.PBWeight = pbWeight.Text;
+
+                await App.Database.UpdateExerciseAsync(lastSelection);
+
+                collectionView.ItemsSource = await App.Database.GetExerciseAsync();
+            }
+        }
     }
 }
