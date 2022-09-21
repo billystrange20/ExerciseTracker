@@ -18,8 +18,14 @@ namespace ExerciseTracker
 
         protected override async void OnAppearing()
         {
-            base.OnAppearing();            
-            collectionView.ItemsSource = await App.Database.GetExerciseAsync();
+            base.OnAppearing();
+            chest.ItemsSource = await App.Database.GetAllExerciseTypeAsync("Chest");
+            tricep.ItemsSource = await App.Database.GetAllExerciseTypeAsync("Tricep");
+            bicep.ItemsSource = await App.Database.GetAllExerciseTypeAsync("Bicep");
+            back.ItemsSource = await App.Database.GetAllExerciseTypeAsync("Back");
+            shoulders.ItemsSource = await App.Database.GetAllExerciseTypeAsync("Shoulders");
+            abs.ItemsSource = await App.Database.GetAllExerciseTypeAsync("Abs");
+            legs.ItemsSource = await App.Database.GetAllExerciseTypeAsync("Legs");
         }
 
         private async void UpdateEx_OnClicked(object sender, EventArgs e)

@@ -10,7 +10,9 @@ namespace ExerciseTracker
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public String ExName { get; set; }
+        public String ExType { get; set; }
         public String AvgWeight { get; set; }
         public String PBWeight { get; set; }
+        
     }
 }

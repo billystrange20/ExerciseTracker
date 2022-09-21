@@ -11,6 +11,21 @@
             <Label Text="New Exercise Name: " FontSize="18"/>
             <Entry x:Name="exName"/>
 
+            <Label Text="New Exercise Type: " FontSize="18"/>
+            <Picker x:Name="exType" Title="Select Exercise Type" SelectedIndexChanged="OnPickerSelectedIndexChanged" TitleColor="Blue">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Chest</x:String>
+                        <x:String>Tricep</x:String>
+                        <x:String>Bicep</x:String>
+                        <x:String>Back</x:String>
+                        <x:String>Shoulders</x:String>
+                        <x:String>Abs</x:String>
+                        <x:String>Legs</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
             <Label Text="Average Weight: " FontSize="18" />
             <Entry x:Name="avgWeight" Keyboard="Numeric"/>
 
