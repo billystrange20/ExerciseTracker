@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExerciseTracker2.MainPage">
+
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="#283A77" Padding="24" CornerRadius="0">
+                <Label Text="Exercise Tracker" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+            <Button Text="Update Exercise" Clicked="UpdateEx_OnClicked"/>
+            <Button Text="New Exercise" Clicked="NewEx_OnClicked"/>
+            <Button Text="Delete Exercise" Clicked="DelEx_OnClicked"/>
+
+            <Label Text="Exercises Saved: " FontSize="Title" Padding="30,10,30,10"/>
+
+            
+            
+            <Label Text="Chest:" FontSize="Large" Padding="10,10,20,10"/>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+
+                <CollectionView x:Name="chest" Grid.Row="0" EmptyView="No items to display">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding ExName}" FontSize="Large" TextDecorations="Underline"/>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Average Weight: " FontSize="Small"/>
+                                    <Label Text="{Binding AvgWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Personal Best: " FontSize="Small"/>
+                                    <Label Text="{Binding PBWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+            
+            <!--_____________________________________________________________________________________________-->
+
+            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+
+            <Label Text="Tricep:" Grid.Row="2" FontSize="Large" Padding="10,10,20,10"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+
+                <CollectionView x:Name="tricep" Grid.Row="0" EmptyView="No items to display">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding ExName}" FontSize="Large" TextDecorations="Underline"/>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Average Weight: " FontSize="Small"/>
+                                    <Label Text="{Binding AvgWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Personal Best: " FontSize="Small"/>
+                                    <Label Text="{Binding PBWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+
+            <!--_____________________________________________________________________________________________-->
+
+            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+
+            <Label Text="Bicep:" FontSize="Large" Padding="10,10,20,10"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+
+                <CollectionView x:Name="bicep" Grid.Row="0" EmptyView="No items to display">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding ExName}" FontSize="Large" TextDecorations="Underline"/>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Average Weight: " FontSize="Small"/>
+                                    <Label Text="{Binding AvgWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Personal Best: " FontSize="Small"/>
+                                    <Label Text="{Binding PBWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+
+            <!--_____________________________________________________________________________________________-->
+
+            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+
+            <Label Text="Back:" FontSize="Large" Padding="10,10,20,10"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+
+                <CollectionView x:Name="back" Grid.Row="0" EmptyView="No items to display">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding ExName}" FontSize="Large" TextDecorations="Underline"/>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Average Weight: " FontSize="Small"/>
+                                    <Label Text="{Binding AvgWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Personal Best: " FontSize="Small"/>
+                                    <Label Text="{Binding PBWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+
+            <!--_____________________________________________________________________________________________-->
+
+            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+
+            <Label Text="Shoulders:" FontSize="Large" Padding="10,10,20,10"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+
+                <CollectionView x:Name="shoulders" Grid.Row="0" EmptyView="No items to display">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding ExName}" FontSize="Large" TextDecorations="Underline"/>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Average Weight: " FontSize="Small"/>
+                                    <Label Text="{Binding AvgWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Personal Best: " FontSize="Small"/>
+                                    <Label Text="{Binding PBWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+
+            <!--_____________________________________________________________________________________________-->
+
+            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+
+            <Label Text="Abs:" FontSize="Large" Padding="10,10,20,10"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+
+                <CollectionView x:Name="abs" Grid.Row="0" EmptyView="No items to display">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding ExName}" FontSize="Large" TextDecorations="Underline"/>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Average Weight: " FontSize="Small"/>
+                                    <Label Text="{Binding AvgWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Personal Best: " FontSize="Small"/>
+                                    <Label Text="{Binding PBWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+
+            <!--_____________________________________________________________________________________________-->
+
+            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+
+            <Label Text="Legs:" FontSize="Large" Padding="10,10,20,10"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+
+                <CollectionView x:Name="legs" Grid.Row="0" EmptyView="No items to display">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding ExName}" FontSize="Large" TextDecorations="Underline"/>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Average Weight: " FontSize="Small"/>
+                                    <Label Text="{Binding AvgWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Personal Best: " FontSize="Small"/>
+                                    <Label Text="{Binding PBWeight}" FontSize="Small"/>
+                                    <Label Text="KG" FontSize="Small"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

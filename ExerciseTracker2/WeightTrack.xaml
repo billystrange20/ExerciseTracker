@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExerciseTracker2.WeightTrack"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms">
+    
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="#283A77" Padding="24" CornerRadius="0">
+                <Label Text="Weight Tracker" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+            <microcharts:ChartView x:Name="chartViewLine" HeightRequest="300"  />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+
+                <CollectionView x:Name="collectionView" Grid.Row="0" SelectionMode="Single" SelectionChanged="collectionView_SelectionChanged" EmptyView="No items to display">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0" Spacing="0">
+                                    <Label Text="{Binding DateWeight.Day}" Margin="0" />
+                                    <Label Text="/" Margin="0" />
+                                    <Label Text="{Binding DateWeight.Month}" Margin="0" />
+                                    <Label Text="/" Margin="0" />
+                                    <Label Text="{Binding DateWeight.Year}" Margin="0" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                                    <Label Text="Weight: " FontSize="Micro"/>
+                                    <Label Text="{Binding UserWeight}" FontSize="Micro"/>
+                                    <Label Text="KG" FontSize="Micro"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            
+            <!--Button Text="Update Weight" Clicked="UpdateWgt_OnClicked"/-->
+
+            <Button Text="Delete Weight" Clicked="DelWgt_OnClicked"/>
+
+            <Button Text="New Weight" Clicked="NewWgt_OnClicked"/>
+            
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

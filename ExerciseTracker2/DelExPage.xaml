@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExerciseTracker2.DelExPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Padding="24" CornerRadius="0">
+                <Label Text="Delete Exercise" HorizontalTextAlignment="Center" FontSize="36"/>
+            </Frame>
+
+            <Label Text="Select Exercise to Delete: " FontSize="Subtitle"/>
+
+            <CollectionView x:Name="collectionView" SelectionMode="Single" SelectionChanged="collectionView_SelectionChanged" EmptyView="No items to display">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding ExName}" FontSize="Small" Padding="10" TextDecorations="Underline"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Delete" Clicked="Delete_OnClicked"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
